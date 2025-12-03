@@ -1,0 +1,81 @@
+# recipes/recipe.yml
+type: bootc
+# Modern BlueBuild images are bootc-based (works exactly like your current Containerfile)
+
+base:
+  image: ghcr.io/ublue-os/silverblue-main
+  version: "43"   # or "latest" / "41" when you want
+
+modules:
+  - type: rpm-ostree
+    install:
+      - niri
+      - greetd
+      - greetd-tuigreet   # keep for fallback, your DMS greeter will override
+      - qt6-qtwayland
+      - xdg-desktop-portal-niri
+      - wl-clipboard
+      - wtype
+      - grim
+      - slurp
+      - brightnessctl
+      - pamixer
+      - network-manager-applet
+      - polkit-gnome   # if you ever want polkit-gnome-authentication-agent
+      # add any other RPMs you manually install in build.sh here
+
+    remove:
+      - firefox
+      - firefox-langpacks
+      - gnome-software
+      - gnome-software-rpm-ostree
+      - sddm
+      - gdm
+      - gnome-tour
+      - yelp
+
+  - type: files
+    files:
+      # Your greetd + DMS Greeter configs
+      - source: system_files/etc/greetd
+        destination: /etc/greetd
+
+      # Niri config for new users
+      - source: config/niri
+        destination: /usr/etc/skel/.config/niri
+
+      # Any other dotfiles you want in /usr/etc/skel
+      - source: config/dms
+        destination: /usr/etc/skel/.config/dms
+
+  - type: script
+    scripts:
+      - 01-dms-and-flatpaks.sh: |
+          #!/bin/bash
+          set -euo pipefail
+
+          # Add Flathub
+          flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+          # Pull DankMaterialShell dotfiles & launcher (exactly what your build.sh does)
+          echo "Setting up DankMaterialShell..."
+          mkdir -p /usr/share/dms
+          curl -L https://github.com/end-4/dots-hyprland/archive/refs/heads/main.tar.gz | \
+              tar -xz -C /usr/share/dms --strip-components=1
+
+          # Copy themes, icons, cursors, etc.
+          cp -r /usr/share/dms/.config/* /usr/etc/skel/.config/ 2>/dev/null || true
+          cp -r /usr/share/dms/.local/share/* /usr/share/ 2>/dev/null || true
+
+          # Make DMS launcher executable
+          chmod +x /usr/share/dms/.local/bin/dms-launcher 2>/dev/null || true
+
+  - type: systemd
+    enabled:
+      - greetd.service
+    masked:
+      - gdm.service
+      - sddm.service
+
+# Optional: add a description so blue-build.org dashboard looks nice
+description: "QuickBlue – Niri + DankMaterialShell + DMS Greeter + Brave dev setup"
