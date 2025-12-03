@@ -1,10 +1,8 @@
 # recipes/recipe.yml
 type: bootc
 # Modern BlueBuild images are bootc-based (works exactly like your current Containerfile)
-
-base:
-  image: ghcr.io/ublue-os/silverblue-main
-  version: "43"   # or "latest" / "41" when you want
+image-version: 43
+base-image: ghcr.io/ublue-os/silverblue-main
 
 modules:
   - type: rpm-ostree
@@ -41,7 +39,7 @@ modules:
         destination: /etc/greetd
 
       # Niri config for new users
-      - source: config/niri
+      - source: system_files/etc/niri
         destination: /usr/etc/skel/.config/niri
 
       # Any other dotfiles you want in /usr/etc/skel
