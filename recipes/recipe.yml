@@ -41,6 +41,5 @@ modules:
       enabled:
         - greetd
         - firewalld
-        - cliphist
 
 description: "QuickBlue - Niri + DankMaterialShell + DMS Greeter + Brave dev setup"
