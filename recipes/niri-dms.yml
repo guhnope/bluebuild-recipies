@@ -1,0 +1,49 @@
+name: qsblue-niri-dms
+image-version: 43
+base-image: ghcr.io/ublue-os/base-main
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/dms
+        - avengemedia/danklinux
+        - ublue-os/packages
+  - type: rpm-ostree        
+    install:
+      - niri
+      - alacritty
+      - xwayland-satellite
+      - greetd
+      - greetd-tuigreet
+      - greetd-selinux
+      - qt6-qtwayland
+      - xdg-desktop-portal-gnome
+      - wl-clipboard
+      - network-manager-applet
+      - quickshell
+      - matugen
+      - material-symbols-fonts
+      - dms
+      - dms-greeter
+      - wlsunset
+      - cliphist
+      - imv
+      - mpv
+      - nemo
+      - mousepad
+      - qt6ct
+      - qt5ct
+    remove:
+      - firefox
+      - firefox-langpacks
+  - type: files
+    files:
+      - source: niri
+        destination: /
+  - type: systemd
+    system:
+      enabled:
+        - greetd
+        - firewalld
+
+description: "QuickBlue - Niri + DankMaterialShell + DMS Greeter + Brave dev setup"
