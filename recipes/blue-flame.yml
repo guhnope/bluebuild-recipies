@@ -45,7 +45,6 @@ modules:
       - firefox-langpacks
       - vim-minimal  
       - vim-enhanced       
-      - vim-default-editor  
   - type: files
     files:
       - source: niri
@@ -58,7 +57,7 @@ modules:
         - greetd
         - firewalld
   - type: rpm-ostree        
-    remove:
+    remove: # Remove unwanted packages that were installed as weak dependancies
       - gnome-keyring
       - fuzzel
       - waybar
