@@ -42,7 +42,16 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
+    exclude:
+      - fuzzel
+      - waybar
+      - fedora-workstation-backgrounds
+      - gnome-keyring
+      - gnome-keyring-pam
+      - gnome-online-accounts
       - gnome-online-accounts-libs
+      - f43-backgrounds-gnome-      
+      - abattis-cantarell-fonts   # also often sneaks in    
   - type: files
     files:
       - source: niri
