@@ -67,7 +67,6 @@ modules:
           - com.visualstudio.code
           - org.signal.Signal
           - com.slack.Slack
-          - md.obsidian.Obsidian
 
 description: "Niri + DankMaterialShell in an Atomic Desktop"
 
