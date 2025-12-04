@@ -39,13 +39,11 @@ modules:
       - mousepad
       - brave-browser
       - code
-
     remove:
       - firefox
       - firefox-langpacks
       - gnome-keyring
       - gnome-online-accounts-libs
-      - f43-backgrounds-gnome 
   - type: files
     files:
       - source: niri
