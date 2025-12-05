@@ -651,7 +651,7 @@ binds {
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
 // Recommended (must install polkit-mate before hand) for elevation prompts
-spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
+spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 // This may be a different path on different distributions, the above is for the arch linux mate-polkit package
 
 // Starts DankShell

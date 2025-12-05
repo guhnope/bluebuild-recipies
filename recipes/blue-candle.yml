@@ -29,6 +29,7 @@ modules:
       - adw-gtk3-theme 
       - wlsunset
       - neovim
+      - mate-polkit
       - cliphist
       - imv
       - caja
@@ -42,6 +43,7 @@ modules:
       - firefox-langpacks
       - vim-minimal  
       - vim-enhanced
+      - libreoffice      
   - type: default-flatpaks
     configurations:
       - scope: system

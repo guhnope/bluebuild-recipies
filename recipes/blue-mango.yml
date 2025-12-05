@@ -23,6 +23,7 @@ modules:
       - greetd-selinux
       - qt6-qtwayland
       - wl-clipboard
+      - mate-polkit      
       - network-manager-applet
       - matugen
       - material-symbols-fonts
@@ -40,6 +41,7 @@ modules:
       - firefox-langpacks
       - vim-minimal  
       - vim-enhanced
+      - libreoffice
   - type: default-flatpaks
     configurations:
       - scope: system
