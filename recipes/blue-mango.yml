@@ -55,7 +55,6 @@ modules:
           - com.slack.Slack
           - md.obsidian.Obsidian
           - com.visualstudio.code
-          - org.libreoffice.LibreOffice
           - com.spotify.Client
   - type: files
     files:
@@ -67,10 +66,7 @@ modules:
     system:
       enabled:
         - greetd
-        - firewalld
-  - type: rpm-ostree   
-    remove: 
-      - libreoffice                 
+        - firewalld               
   - type: script
     scripts:
       - dms-skel.sh

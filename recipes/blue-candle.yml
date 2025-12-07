@@ -56,7 +56,6 @@ modules:
           - com.slack.Slack
           - md.obsidian.Obsidian
           - com.visualstudio.code
-          - org.libreoffice.LibreOffice
           - com.spotify.Client        
   - type: files
     files:
@@ -74,7 +73,6 @@ modules:
       - gnome-keyring
       - fuzzel
       - waybar
-      - libreoffice      
   - type: script
     scripts:
       - dms-skel.sh
