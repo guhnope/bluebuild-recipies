@@ -58,10 +58,12 @@ modules:
           - com.spotify.Client
   - type: files
     files:
+      - source: system
+        destination: /    
       - source: mango
         destination: /
       - source: dms
-        destination: /     
+        destination: /
   - type: systemd
     system:
       enabled:
