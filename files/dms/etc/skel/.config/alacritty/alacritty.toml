@@ -1,6 +1,6 @@
 [general]
 import = [
-  "/etc/alacritty/dank-theme.toml"
+  "~/.config/alacritty/dank-theme.toml"
 ]
 
 [window]
