@@ -1,4 +1,4 @@
-name: BlueCandle
+name: Aethera
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
