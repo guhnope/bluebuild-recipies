@@ -1,33 +1,18 @@
 # Sway configuration generated from your MangoWC setup
 #
 # This file uses variables to make it easier to change settings.
-# Mod-Key: Super (Windows key)
 set $mod Mod4
-
-# Your preferred terminal
 set $term alacritty
-
-# Your preferred file manager
 set $files caja
-
-# Your preferred browser
-set $browser flatpak run com.google.Chrome
-
-# Use fuzzy finder for applications
-set $menu dms ipc call spotlight toggle
+set $browser 'flatpak run com.google.Chrome'
+set $menu 'dms ipc call spotlight toggle'
 
 # --- Appearance ---
 font pango:monospace 10
-
-# Gaps (from config.conf)
-gaps inner 5
-gaps outer 5
+gaps inner 10
+gaps outer 10
 smart_gaps off
-
-# Borders (from config.conf)
 default_border pixel 4
-
-# Colors (from config.conf)
 #                      border              background          text                indicator           child_border
 client.focused         #c9b890             #c9b890             #000000             #2e9ef4            #c9b890
 client.unfocused       #444444             #444444             #ffffff             #2e9ef4            #444444
@@ -54,7 +39,7 @@ input type:touchpad {
     accel_profile adaptive
 }
 
-# --- Autostart Applications (from autostart.sh) ---
+# autostart
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec_always mako
 exec_always fcitx5 --replace -d
@@ -64,7 +49,6 @@ exec_always nm-applet
 exec_always /usr/libexec/polkit-mate-authentication-agent-1
 exec_always dms run
 
-# --- Keybindings (from bind.conf) ---
 
 # Launchers
 bindsym $mod+Return exec $term
@@ -74,7 +58,8 @@ bindsym $mod+e exec $files
 
 # Session control
 bindsym $mod+l exec 'dms ipc call lock lock'
-bindsym $mod+Shift+Control+q exit
+bindsym $mod+Control+q 'dms ipc call powermenu toggle'
+bindsym $mod+Alt+Space 'dms ipc call control-center toggle'
 
 # Kill focused window
 bindsym $mod+q kill
@@ -88,10 +73,16 @@ bindsym Alt+Right focus right
 bindsym Alt+Up focus up
 bindsym Alt+Down focus down
 
+# Audio
 bindsym XF86AudioRaiseVolume dms ipc call audio increment 3
 bindsym XF86AudioLowerVolume dms ipc call audio decrement 3
 bindsym XF86AudioMute dms ipc call audio mute
 bindsym XF86AudioMicMute dms ipc call audio micmute
+bindsym XF86AudioPlay dms ipc call mpris playPause
+bindsym XF86AudioNext dms ipc call mpris next
+bindsym XF86AudioPrev dms ipc call mpris previous
+
+# Brightness
 bindsym XF86MonBrightnessUp dms ipc call brightness increment 5
 bindsym XF86MonBrightnessDown dms ipc call brightness decrement 5
 
@@ -164,7 +155,7 @@ mode "resize" {
 }
 bindsym $mod+Shift+r mode "resize"
 
-# --- Window Rules (from rule.conf) ---
+# --- Window Rules ---
 for_window [app_id="(?i)xdg-desktop-portal-gtk"] floating enable
 for_window [title="(?i)迅雷"] floating enable, resize set 800 900
 for_window [title="(?i)Translate"] floating enable, resize set 800 900
@@ -181,11 +172,11 @@ for_window [app_id="(?i)QQ"] inhibit_idle fullscreen
 for_window [app_id="(?i)baidunetdisk" title="(?i)百度网盘"] floating enable, resize set 1500 900
 
 # Assign applications to workspaces
-assign [app_id="(?i)Google-chrome"] $ws4
-assign [app_id="(?i)QQ"] $ws3
-assign [app_id="(?i)mpv"] $ws2
-assign [app_id="(?i)obs"] $ws6
-assign [app_id="(?i)org.telegram.desktop"] $ws5
+assign [app_id="(?i)com.google.Chrome"] $ws1
+assign [app_id="(?i)com.slack.Slack"] $ws1
+assign [app_id="(?i)com.visualstudio.code"] $ws2
+assign [app_id="(?i)mpv"] $ws4
+assign [app_id="(?i)com.spotify.Client"] $ws4
 
 # Include other config files if needed
 # include /etc/sway/config.d/*
