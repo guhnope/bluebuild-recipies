@@ -7,7 +7,7 @@ modules:
       - ENV LANG=en_US.UTF-8
       - ENV LC_ALL=en_US.UTF-8
       # Remove docs to avoid the "Pathname can't be converted" crash
-      - RUN - rm -rf /usr/share/doc /usr/share/man /usr/share/info
+      - RUN rm -rf /usr/share/doc /usr/share/man /usr/share/info
   - type: dnf
     repos:   
       copr:
