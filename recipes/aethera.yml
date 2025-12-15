@@ -13,7 +13,7 @@ modules:
       copr:
         - avengemedia/dms
         - avengemedia/danklinux
-  - type: rpm-ostree        /usr/share/doc /usr/share/man /usr/share/locale
+  - type: rpm-ostree 
     install:
       - niri
       - alacritty
