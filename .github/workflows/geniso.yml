@@ -1,47 +1,44 @@
-name: Build Installer ISO
+name: Build Interactive Installer ISO
 
 on:
-  workflow_dispatch: # Allows you to manually trigger the build from the Actions tab
+  workflow_dispatch:
   push:
     tags:
-      - 'v*' # Automatically build when you push a tag like "v1.0"
+      - 'v*'
 
 jobs:
-  build-iso:
+  build-interactive-iso:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: read # Required to pull your container image
+    container: 
+      image: fedora:43
+      options: --privileged
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: dnf install -y lorax wget xorriso
 
-      # 1. Build the ISO
-      - name: Build ISO with bootc-image-builder
-        uses: ublue-os/bootc-image-builder-action@v1
-        with:
-          # Your image URL
-          image: ghcr.io/guhnope/aethera:latest
-          # The type of ISO to generate
-          type: anaconda-iso
-          fedora-version: 43
+      - name: Download Fedora 43 Net-Installer
+        run: |
+          wget -O base.iso https://download.fedoraproject.org/pub/fedora/linux/releases/43/Server/x86_64/iso/Fedora-Server-netinst-x86_64-43-1.2.iso
 
-      # 2. Upload as Artifact (For testing)
-      # You can download this from the Actions tab immediately
-      - name: Upload ISO Artifact
+      - name: Create Interactive Kickstart
+        run: |
+          cat <<EOF > kickstart.ks
+          # Use Graphical mode so you can use the Partition Editor
+          graphical
+
+          network --bootproto=dhcp --device=link
+          ostreecontainer --url=ghcr.io/guhnope/aethera:latest --transport=registry --no-signature-verification
+          EOF
+
+      - name: Build ISO
+        run: |
+          # We still inject the UTF-8 fix to prevent the crash
+          mkksiso --ks kickstart.ks --cmdline "inst.lang=en_US.UTF-8 inst.env=LC_ALL=en_US.UTF-8" base.iso aethera-interactive.iso
+
+      - name: Upload ISO
         uses: actions/upload-artifact@v4
         with:
-          name: aethera-installer-iso
-          path: ./*.iso
-          if-no-files-found: error
+          name: aethera-interactive
+          path: aethera-interactive.iso
           retention-days: 5
-
-      # 3. (Optional) Create a GitHub Release
-      - name: Release ISO
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: ./*.iso
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
