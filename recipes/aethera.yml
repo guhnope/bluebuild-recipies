@@ -1,4 +1,4 @@
-name: Aethera
+name: aethera
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
@@ -7,7 +7,6 @@ modules:
       copr:
         - avengemedia/dms
         - avengemedia/danklinux
-        - ublue-os/packages
   - type: rpm-ostree        
     install:
       - niri
@@ -37,9 +36,6 @@ modules:
       - mousepad
       - engrampa
       - paperwork
-      - ublue-os-udev-rules
-      - ublue-os-media-automount-udev
-      - ublue-os-luks 
       - mpv
     remove:
       - firefox
