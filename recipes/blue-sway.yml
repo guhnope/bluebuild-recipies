@@ -1,12 +1,13 @@
 name: BlueSway
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
-containerfile:
-  snippets:
-    # FIX: Force UTF-8 Locale to prevent Installer Crash (ExitStatus 256)
-    - ENV LANG=en_US.UTF-8
-    - ENV LC_ALL=en_US.UTF-8
 modules:
+  - type: containerfile
+    snippets:
+      - ENV LANG=en_US.UTF-8
+      - ENV LC_ALL=en_US.UTF-8
+      # Remove docs to avoid the "Pathname can't be converted" crash
+      - RUN rm -rf /usr/share/doc/just/
   - type: dnf
     repos:
       copr:
