@@ -23,7 +23,6 @@ modules:
       - wlsunset
       - neovim
       - mate-polkit
-      - cliphist
       - imv
       - caja
       - atril
