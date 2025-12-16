@@ -6,9 +6,6 @@ modules:
     snippets:
       - ENV LANG=en_US.UTF-8
       - ENV LC_ALL=en_US.UTF-8
-      # Remove docs to avoid the "Pathname can't be converted" crash
-      - RUN rm -rf /usr/share/doc/just/
-      - RUN rm -rf /usr/share/doc/niri/
   - type: dnf
     repos:   
       copr:
@@ -87,5 +84,9 @@ modules:
       - greetd-users.sh
       - neovim.sh
       - misc.sh
-
+  - type: containerfile
+    snippets:
+      # Remove docs to avoid the "Pathname can't be converted" crash
+      - RUN rm -rf /usr/share/doc/just/
+      - RUN rm -rf /usr/share/doc/niri/
 description: "Niri + DankMaterialShell in an Atomic Desktop"
