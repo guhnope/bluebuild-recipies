@@ -22,7 +22,6 @@ modules:
       - greetd-tuigreet
       - greetd-selinux
       - qt6-qtwayland
-      - fish
       - wl-clipboard
       - network-manager-applet
       - quickshell
