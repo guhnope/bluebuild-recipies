@@ -20,6 +20,10 @@ modules:
       - xwayland-satellite
       - xdg-desktop-portal-gnome
       - quickshell  
+      - fish
+      - grim  
+      - slurp
+      - mako
       - dms
       - dms-greeter
       - adw-gtk3-theme

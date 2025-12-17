@@ -17,7 +17,10 @@ modules:
       - mangowc
       - scenefx
       - fish
-      - quickshell  
+      - grim
+      - slurp
+      - mako
+      - quickshell
       - dms
       - dms-greeter
       - adw-gtk3-theme
