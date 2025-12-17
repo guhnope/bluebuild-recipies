@@ -7,12 +7,12 @@ I also made one for Sway as it was extremly straight forward. No name for it yet
 
 Currently bluebuild ISOs fail during install so currently it requires being rebased 
 
-If you are on a Fedora Atomic distro (Silverblue, Kinoite, Onyx, etc)
-Aethera: rpm-ostree rebase ostree-unverified-registry:ghcr.io/guhnope/aethera:latest
-BlueMango: rpm-ostree rebase ostree-unverified-registry:ghcr.io/guhnope/bluemango:latest
+If you are on a Fedora Atomic distro (Silverblue, Kinoite, Onyx, etc): <br>
+Aethera: rpm-ostree rebase ostree-unverified-registry:ghcr.io/guhnope/aethera:latest <br>
+BlueMango: rpm-ostree rebase ostree-unverified-registry:ghcr.io/guhnope/bluemango:latest <br>
 Unnamed Sway Build: rpm-ostree rebase ostree-unverified-registry:ghcr.io/guhnope/bluesway:latest
 
-Once you are on an a universal blue image, weather unsigned from above or Aurora, Bluefin or Bazzite.
-Aethera: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/bluecandle
-BlueMango: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/bluemango
-Unnamed Sway Build: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/bluesway
+Once you are on an a universal blue image, weather unsigned from above or Aurora, Bluefin or Bazzite: <br>
+Aethera: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/aethera:latest <br>
+BlueMango: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/bluemango:latest <br>
+Unnamed Sway Build: rpm-ostree rebase ostree-image-signed:docker://ghcr.io/guhnope/bluesway:latest 
