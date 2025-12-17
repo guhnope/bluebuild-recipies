@@ -21,6 +21,7 @@ modules:
       - dms-greeter
       - sway
       - grim
+      - fish
       - slurp
       - mako
       - swayidle

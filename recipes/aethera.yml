@@ -74,11 +74,6 @@ modules:
       enabled:
         - greetd
         - firewalld
-  - type: rpm-ostree        
-    remove: # Remove unwanted packages that were installed as weak dependancies
-      - gnome-keyring
-      - fuzzel
-      - waybar
   - type: script
     scripts:
       - dms-skel.sh
