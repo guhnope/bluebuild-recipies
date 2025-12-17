@@ -19,11 +19,11 @@ modules:
       - niri
       - xwayland-satellite
       - xdg-desktop-portal-gnome
-      - quickshell  
       - fish
-      - grim  
+      - grim
       - slurp
       - mako
+      - quickshell
       - dms
       - dms-greeter
       - adw-gtk3-theme
