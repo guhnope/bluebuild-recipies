@@ -15,7 +15,7 @@ modules:
     install:
       - niri
       - xwayland-satellite
-      - xdg-desktop-portal-gnome
+      - xdg-desktop-portal-gtk      
       - fish
       - grim
       - slurp
