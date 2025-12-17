@@ -1,4 +1,4 @@
-name: BlueMango
+name: bluemango
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
@@ -62,7 +62,7 @@ modules:
   - type: files
     files:
       - source: system
-        destination: /    
+        destination: /
       - source: mango
         destination: /
       - source: dms
