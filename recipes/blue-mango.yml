@@ -14,15 +14,14 @@ modules:
         - dennemann/MangoWC
         - avengemedia/dms
         - avengemedia/danklinux
-        - ublue-os/packages
   - type: rpm-ostree        
     install:
-      - quickshell  
-      - dms
-      - dms-greeter
       - mangowc
       - scenefx
       - fish
+      - quickshell  
+      - dms
+      - dms-greeter
       - adw-gtk3-theme
       - alacritty
       - greetd

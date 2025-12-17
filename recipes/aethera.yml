@@ -7,6 +7,8 @@ modules:
       - ENV LANG=en_US.UTF-8
       - ENV LC_ALL=en_US.UTF-8
       - RUN rm -rf /usr/share/doc/just/
+      - RUN echo "%_excludedocs 1" > /etc/rpm/macros.d/excludedocs
+      - RUN echo "install_weak_deps=False" >> /etc/dnf/dnf.conf
   - type: dnf
     repos:   
       copr:
@@ -16,26 +18,26 @@ modules:
   - type: rpm-ostree 
     install:
       - niri
-      - alacritty
       - xwayland-satellite
       - xdg-desktop-portal-gnome
+      - quickshell  
+      - dms
+      - dms-greeter
+      - adw-gtk3-theme
+      - alacritty
       - greetd
       - greetd-tuigreet
       - greetd-selinux
       - qt6-qtwayland
       - wl-clipboard
+      - mate-polkit      
       - network-manager-applet
-      - quickshell
       - matugen
       - material-symbols-fonts
-      - dms
-      - dms-greeter
-      - adw-gtk3-theme 
       - wlsunset
-      - neovim
-      - mate-polkit
       - cliphist
       - imv
+      - neovim
       - caja
       - atril
       - mousepad

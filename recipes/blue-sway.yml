@@ -13,18 +13,17 @@ modules:
       copr:
         - avengemedia/dms
         - avengemedia/danklinux
-        - ublue-os/packages
   - type: rpm-ostree        
     install:
-      - quickshell  
-      - dms
-      - dms-greeter
       - sway
       - grim
-      - fish
       - slurp
       - mako
       - swayidle
+      - fish
+      - quickshell  
+      - dms
+      - dms-greeter
       - adw-gtk3-theme
       - alacritty
       - greetd
