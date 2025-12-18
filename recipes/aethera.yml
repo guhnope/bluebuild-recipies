@@ -2,9 +2,6 @@ name: aethera
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - type: containerfile
-    snippets:
-      - RUN echo "install_weak_deps=False" >> /etc/dnf/dnf.conf  
   - type: dnf
     repos:   
       copr:
@@ -70,11 +67,7 @@ modules:
       - source: niri
         destination: /
       - source: dms
-        destination: / 
-  - type: containerfile
-    snippets:
-      - RUN rm -rf /usr/share/doc/niri
-      - RUN rm -rf /usr/share/doc/just 
+        destination: /
   - type: systemd
     system:
       enabled:
@@ -82,6 +75,7 @@ modules:
         - firewalld
   - type: script
     scripts:
+      - niri.sh
       - greetd-users.sh
       - neovim.sh
       - initramfs.sh
