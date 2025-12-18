@@ -2,9 +2,6 @@ name: aethera
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - type: containerfile
-    snippets:
-      - RUN echo "install_weak_deps=False" >> /etc/dnf/dnf.conf  
   - type: dnf
     repos:   
       copr:
