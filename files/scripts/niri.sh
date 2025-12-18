@@ -1,20 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "=== Scanning for invalid UTF-8 filenames ==="
+echo "=== Targeted ISO UTF-8 fix ==="
 
-# Use -print0 and -0 to handle weird names safely, skip obvious false positives
-find /usr /etc /opt -type f -o -type d 2>/dev/null -print0 | while IFS= read -r -d '' path; do
-    # Skip common top-level dirs that are always valid
-    case "$path" in
-        /usr|/etc|/opt|/var|/var/lib) continue ;;
-    esac
+# Remove the known bad /usr/games dir (empty, harmless)
+if [ -e /usr/games ]; then
+    echo "Removing known problematic /usr/games"
+    rm -rf /usr/games
+fi
 
-    # Test if the full path is valid UTF-8
+# Optional: Scan for any truly invalid filenames (should find none now)
+find /usr /etc /opt 2>/dev/null | while read -r path; do
     if ! printf '%s' "$path" | iconv -f UTF-8 -t UTF-8 //IGNORE >/dev/null 2>&1; then
-        echo "BAD UTF-8 FILENAME FOUND AND REMOVED: $path"
+        echo "Unexpected bad filename found: $path (removing)"
         rm -rf "$path"
     fi
 done
 
-echo "=== Cleanup complete ==="
+echo "=== Fix complete ==="
