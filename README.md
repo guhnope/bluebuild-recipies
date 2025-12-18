@@ -1,4 +1,4 @@
-# dms-ublue
+# Aethera
 
 This repo is just a sandpit for learning UniversalBlue and Bluebuild 
 The "flagship" here is Aethera, a Niri + DankMaterialShell immutable "distro" built on Universal Blue, designed purely around my ideal workflow and theming tastes.
