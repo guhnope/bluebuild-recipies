@@ -71,6 +71,10 @@ modules:
         destination: /
       - source: dms
         destination: / 
+  - type: containerfile
+    snippets:
+      - RUN rm -rf /usr/share/doc/niri
+      - RUN rm -rf /usr/share/doc/just 
   - type: systemd
     system:
       enabled:
