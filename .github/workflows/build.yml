@@ -12,12 +12,6 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-      - name: Build testing image
-        uses: blue-build/github-action@v1 
-        with:
-          recipe: aethera-testing.yml
-          cosign_private_key: ${{ secrets.SIGNING_SECRET }}  
-          registry_token: ${{ secrets.GITHUB_TOKEN }}  
       - name: Build Aethera image
         uses: blue-build/github-action@v1 
         with:

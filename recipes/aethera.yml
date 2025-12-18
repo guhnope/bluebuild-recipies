@@ -9,7 +9,6 @@ modules:
         - avengemedia/danklinux
   - type: rpm-ostree 
     install:
-      - niri
       - xwayland-satellite
       - xdg-desktop-portal-gtk      
       - fish
@@ -45,6 +44,30 @@ modules:
       - firefox-langpacks
       - vim-minimal  
       - vim-enhanced
+  - type: files
+    files:
+      - source: system
+        destination: /
+  - type: rpm-ostree 
+    install:
+      - niri
+  - type: files
+    files:
+      - source: niri
+        destination: /
+      - source: dms
+        destination: /      
+  - type: systemd
+    system:
+      enabled:
+        - greetd
+        - firewalld
+  - type: script
+    scripts:
+      - niri.sh
+      - greetd-users.sh
+      - neovim.sh
+      - initramfs.sh
   - type: default-flatpaks
     configurations:
       - scope: system
@@ -58,24 +81,5 @@ modules:
           - com.slack.Slack
           - md.obsidian.Obsidian
           - com.visualstudio.code
-          - com.spotify.Client
-  - type: files
-    files:
-      - source: system
-        destination: /
-      - source: niri
-        destination: /
-      - source: dms
-        destination: /
-  - type: systemd
-    system:
-      enabled:
-        - greetd
-        - firewalld
-  - type: script
-    scripts:
-      - niri.sh
-      - greetd-users.sh
-      - neovim.sh
-      - initramfs.sh
+          - com.spotify.Client      
 description: "Niri + DankMaterialShell in an Atomic Desktop"
