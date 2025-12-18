@@ -5,7 +5,6 @@ modules:
   - type: dnf
     repos:   
       copr:
-        - yalter/niri
         - avengemedia/dms
         - avengemedia/danklinux
   - type: rpm-ostree 
