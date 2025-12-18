@@ -40,8 +40,8 @@ modules:
       - paperwork
       - mpv
     remove:
-      - firefox
-      - firefox-langpacks
+      #- firefox
+      #- firefox-langpacks
       - vim-minimal  
       - vim-enhanced
   - type: files
