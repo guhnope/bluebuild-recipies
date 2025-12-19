@@ -1,5 +1,3 @@
-# Aethera
-
 This repo is just a sandpit for learning UniversalBlue and Bluebuild 
 The "flagship" here is Aethera, a Niri + DankMaterialShell immutable "distro" built on Universal Blue, designed purely around my ideal workflow and theming tastes.
 I also have one called BlueMango which is the same Universal Blue build but with the Mango Wayland Compositor (MangoWC) to learn more about its features.
