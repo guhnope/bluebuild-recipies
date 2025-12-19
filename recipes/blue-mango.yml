@@ -26,7 +26,7 @@ modules:
       - greetd-selinux
       - qt6-qtwayland
       - wl-clipboard
-      - mate-polkit      
+      - mate-polkit
       - network-manager-applet
       - matugen
       - material-symbols-fonts
@@ -43,7 +43,7 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-      - vim-minimal  
+      - vim-minimal
       - vim-enhanced
   - type: default-flatpaks
     configurations:
@@ -71,7 +71,7 @@ modules:
     system:
       enabled:
         - greetd
-        - firewalld               
+        - firewalld
   - type: script
     scripts:
       - greetd-users.sh
