@@ -61,7 +61,6 @@ modules:
     system:
       enabled:
         - greetd
-        - firewalld
   - type: script
     scripts:
       - niri.sh
