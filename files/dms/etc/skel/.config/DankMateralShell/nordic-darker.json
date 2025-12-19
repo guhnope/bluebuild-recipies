@@ -1,0 +1,22 @@
+{
+    "name": "Nordic Darker",
+    "primary": "#81A1C1",
+    "primaryText": "#ECEFF4",
+    "primaryContainer": "#5E81AC",
+    "secondary": "#88C0D0",
+    "surface": "#2E3440",
+    "surfaceText": "#D8DEE9",
+    "surfaceVariant": "#3B4252",
+    "surfaceVariantText": "#ECEFF4",
+    "surfaceTint": "#81A1C1",
+    "background": "#242933",
+    "backgroundText": "#ECEFF4",
+    "outline": "#434C5E",
+    "surfaceContainer": "#2E3440",
+    "surfaceContainerHigh": "#3B4252",
+    "surfaceContainerHighest": "#434C5E",
+    "error": "#BF616A",
+    "warning": "#EBCB8B",
+    "info": "#5E81AC",
+    "matugen_type": "scheme-expressive"
+}
