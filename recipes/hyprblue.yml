@@ -2,6 +2,7 @@ name: hyprblue
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
+  - from-file: common/general-packages.yml
   - type: dnf
     repos:
       copr:
@@ -9,61 +10,15 @@ modules:
         - avengemedia/dms
         - avengemedia/danklinux
       files:
-        - brave.repo
         - vscode.repo
       keys:
-        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         - https://packages.microsoft.com/keys/microsoft.asc
   - type: rpm-ostree        
     install:
       - hyprland
-      - fish
-      - grim
-      - slurp
-      - mako
       - quickshell
       - dms
       - dms-greeter
-      - adw-gtk3-theme
-      - alacritty
-      - brave-browser
-      - code
-      - greetd
-      - greetd-tuigreet
-      - greetd-selinux
-      - qt6-qtwayland
-      - wl-clipboard
-      - mate-polkit      
-      - network-manager-applet
-      - matugen
-      - material-symbols-fonts
-      - wlsunset
-      - cliphist
-      - imv
-      - neovim
-      - caja
-      - atril
-      - mousepad
-      - engrampa
-      - paperwork
-      - mpv
-    remove:
-      - firefox
-      - firefox-langpacks
-      - vim-minimal  
-      - vim-enhanced
-  - type: default-flatpaks
-    configurations:
-      - scope: system
-        notify: true
-        repo:
-          url: https://dl.flathub.org/repo/flathub.flatpakrepo
-          name: flathub
-          title: Flathub
-        install:
-          - com.slack.Slack
-          - md.obsidian.Obsidian
-          - com.spotify.Client
   - type: files
     files:
       - source: system
@@ -82,4 +37,5 @@ modules:
       - greetd-users.sh
       - neovim.sh
       - initramfs.sh
+  - from-file: common/flatpak.yml
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"

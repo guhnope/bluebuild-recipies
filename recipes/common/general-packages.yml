@@ -1,0 +1,33 @@
+  ---
+  type: rpm-ostree        
+  install:
+    - fish
+    - grim
+    - slurp
+    - mako
+    - adw-gtk3-theme
+    - alacritty
+    - greetd
+    - greetd-tuigreet
+    - greetd-selinux
+    - qt6-qtwayland
+    - wl-clipboard
+    - mate-polkit      
+    - network-manager-applet
+    - matugen
+    - material-symbols-fonts
+    - wlsunset
+    - cliphist
+    - imv
+    - neovim
+    - caja
+    - atril
+    - mousepad
+    - engrampa
+    - paperwork
+    - mpv
+  remove:
+    - firefox
+    - firefox-langpacks
+    - vim-minimal  
+    - vim-enhanced

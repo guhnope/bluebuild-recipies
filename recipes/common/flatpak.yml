@@ -1,0 +1,14 @@
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        notify: true
+        repo:
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
+          name: flathub
+          title: Flathub
+        install:
+          - com.brave.Browser
+          - com.slack.Slack
+          - com.visualstudio.code
+          - md.obsidian.Obsidian
+          - com.spotify.Client
