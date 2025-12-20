@@ -7,7 +7,6 @@ modules:
     repos:
       copr:
         - ashbuk/Hyprland-Fedora
-  - from-file: common/dms-packages.yml             
   - type: rpm-ostree        
     install:
       - hyprland
