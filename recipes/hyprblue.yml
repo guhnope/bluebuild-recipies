@@ -8,6 +8,12 @@ modules:
         - ashbuk/Hyprland-Fedora
         - avengemedia/dms
         - avengemedia/danklinux
+      files:
+        - brave.repo
+        - vscode.repo
+      keys:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+        - https://packages.microsoft.com/keys/microsoft.asc
   - type: rpm-ostree        
     install:
       - hyprland
