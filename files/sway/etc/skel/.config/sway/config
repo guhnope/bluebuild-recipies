@@ -1,0 +1,183 @@
+# Sway configuration generated from your MangoWC setup
+#
+# This file uses variables to make it easier to change settings.
+set $mod Mod4
+set $term alacritty
+set $files caja
+set $browser 'flatpak run com.google.Chrome'
+set $menu 'dms ipc call spotlight toggle'
+
+# --- Appearance ---
+font pango:monospace 10
+gaps inner 10
+gaps outer 10
+smart_gaps off
+default_border pixel 4
+#                      border              background          text                indicator           child_border
+client.focused         #c9b890             #c9b890             #000000             #2e9ef4            #c9b890
+client.unfocused       #444444             #444444             #ffffff             #2e9ef4            #444444
+client.focused_inactive #444444            #444444             #ffffff             #2e9ef4            #444444
+client.urgent          #ad401f             #ad401f             #ffffff             #2e9ef4            #ad401f
+
+# --- Input Configuration ---
+input * {
+    xkb_layout us
+    # xkb_options ctrl:nocaps
+    repeat_delay 600
+    repeat_rate 25
+    xkb_numlock enable
+}
+
+input type:touchpad {
+    tap enabled
+    drag enabled
+    drag_lock enabled
+    natural_scroll disabled
+    dwt enabled
+    left_handed disabled
+    middle_emulation enabled
+    accel_profile adaptive
+}
+
+# autostart
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always mako
+exec_always fcitx5 --replace -d
+exec_always wl-clip-persist --clipboard regular --reconnect-tries 0
+exec_always wl-paste --type text --watch cliphist store
+exec_always nm-applet
+exec_always /usr/libexec/polkit-mate-authentication-agent-1
+exec_always dms run
+
+
+# Launchers
+bindsym $mod+Return exec $term
+bindsym $mod+space exec '$menu'
+bindsym $mod+b exec $browser
+bindsym $mod+e exec $files
+
+# Session control
+bindsym $mod+l exec 'dms ipc call lock lock'
+bindsym $mod+Control+q 'dms ipc call powermenu toggle'
+bindsym $mod+Alt+Space 'dms ipc call control-center toggle'
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Window focus
+bindsym $mod+Tab focus next
+bindsym $mod+u focus last
+bindsym $mod+Shift+Tab focus prev
+bindsym Alt+Left focus left
+bindsym Alt+Right focus right
+bindsym Alt+Up focus up
+bindsym Alt+Down focus down
+
+# Audio
+bindsym XF86AudioRaiseVolume dms ipc call audio increment 3
+bindsym XF86AudioLowerVolume dms ipc call audio decrement 3
+bindsym XF86AudioMute dms ipc call audio mute
+bindsym XF86AudioMicMute dms ipc call audio micmute
+bindsym XF86AudioPlay dms ipc call mpris playPause
+bindsym XF86AudioNext dms ipc call mpris next
+bindsym XF86AudioPrev dms ipc call mpris previous
+bindsym XF86AudioStop dms ipc call mpris stop
+
+# Brightness
+bindsym XF86MonBrightnessUp dms ipc call brightness increment 5
+bindsym XF86MonBrightnessDown dms ipc call brightness decrement 5
+
+# Move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# Window layout and state
+bindsym $mod+n layout toggle
+bindsym Alt+backslash floating toggle
+bindsym Alt+a fullscreen toggle
+bindsym Alt+f fake_fullscreen toggle
+bindsym $mod+i [con_id=__focused__] move to scratchpad
+bindsym $mod+z scratchpad show
+
+# Gaps control
+bindsym Alt+Shift+X gaps inner current plus 5
+bindsym Alt+Shift+Z gaps inner current minus 5
+bindsym Alt+Shift+R gaps inner current set 0
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+bindsym Ctrl+Alt+Left workspace prev
+bindsym Ctrl+Alt+Right workspace next
+
+# Switch to workspace
+bindsym $mod+Alt+1 workspace number $ws1
+bindsym $mod+Alt+2 workspace number $ws2
+bindsym $mod+Alt+3 workspace number $ws3
+bindsym $mod+Alt+4 workspace number $ws4
+bindsym $mod+Alt+5 workspace number $ws5
+bindsym $mod+Alt+6 workspace number $ws6
+bindsym $mod+Alt+7 workspace number $ws7
+bindsym $mod+Alt+8 workspace number $ws8
+bindsym $mod+Alt+9 workspace number $ws9
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+
+# Reload sway config
+bindsym $mod+r reload
+
+# Resize mode
+mode "resize" {
+    bindsym Left resize shrink width 10px
+    bindsym Right resize grow width 10px
+    bindsym Up resize shrink height 10px
+    bindsym Down resize grow height 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+r mode "resize"
+
+# --- Window Rules ---
+for_window [app_id="(?i)xdg-desktop-portal-gtk"] floating enable
+for_window [title="(?i)迅雷"] floating enable, resize set 800 900
+for_window [title="(?i)Translate"] floating enable, resize set 800 900
+for_window [app_id="(?i)flameshot"] fullscreen
+for_window [app_id="(?i)yesplaymusic"] floating enable, resize set 1500 900
+for_window [app_id="(?i)clash-verge"] floating enable, resize set 1500 900
+for_window [app_id="(?i)pot" title="(?i)Recognize"] floating enable, resize set 1500 900
+for_window [app_id="(?i)blueman-manager"] floating enable, resize set 1500 900
+for_window [title="(?i)图片查看器|预览|图片查看|选择文件|打开文件"] floating enable
+for_window [app_id="(?i)python3" title="(?i)qxdrag"] floating enable
+for_window [app_id="(?i)Rofi|qxdrag.py|xfce-polkit"] floating enable
+for_window [app_id="(?i)Rofi"] border none
+for_window [app_id="(?i)QQ"] inhibit_idle fullscreen
+for_window [app_id="(?i)baidunetdisk" title="(?i)百度网盘"] floating enable, resize set 1500 900
+
+# Assign applications to workspaces
+assign [app_id="(?i)com.google.Chrome"] $ws1
+assign [app_id="(?i)com.slack.Slack"] $ws1
+assign [app_id="(?i)com.visualstudio.code"] $ws2
+assign [app_id="(?i)mpv"] $ws4
+assign [app_id="(?i)com.spotify.Client"] $ws4
+
+# Include other config files if needed
+# include /etc/sway/config.d/*
