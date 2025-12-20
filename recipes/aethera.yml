@@ -16,6 +16,9 @@ modules:
       - quickshell
       - dms
       - dms-greeter
+      - matugen
+      - material-symbols-fonts
+      - cliphist      
   - type: files
     files:
       - source: system
