@@ -1,0 +1,19 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/danklinux
+  - type: rpm-ostree        
+    install:
+        - quickshell
+        - matugen
+        - material-symbols-fonts
+        - cliphist
+  - type: scripts
+    scripts:
+      - noctalia.sh   
+  - type: files
+    files:
+      - source: noctalia
+        destination: /        
