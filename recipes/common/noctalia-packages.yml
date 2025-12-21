@@ -1,0 +1,12 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - zhangyi6324/noctalia-shell
+  - type: rpm-ostree        
+    install:
+        - quickshell
+        - matugen
+        - cliphist
+        - noctalia-shell

@@ -13,3 +13,7 @@ modules:
         - cliphist
         - dms
         - dms-greeter
+  - type: files
+    files:
+      - source: dms
+        destination: /        

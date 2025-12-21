@@ -14,8 +14,6 @@ modules:
         destination: /      
       - source: sway
         destination: /
-      - source: dms
-        destination: /
   - type: systemd
     system:
       enabled:

@@ -2,25 +2,21 @@ name: bluemango
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - from-file: common/general-packages.yml
+  - from-file: common/general-packages.yml  
   - type: dnf
     repos:
       copr:
         - dennemann/MangoWC
-        - avengemedia/dms
-        - avengemedia/danklinux
-  - from-file: common/dms-packages.yml        
   - type: rpm-ostree        
     install:
       - mangowc
-      - scenefx  
+      - scenefx
+  - from-file: common/dms-packages.yml        
   - type: files
     files:
       - source: system
         destination: /
       - source: mango
-        destination: /
-      - source: dms
         destination: /
   - type: systemd
     system:

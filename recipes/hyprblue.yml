@@ -17,8 +17,6 @@ modules:
         destination: /
       - source: hypr
         destination: /
-      - source: dms
-        destination: /
   - type: systemd
     system:
       enabled:
