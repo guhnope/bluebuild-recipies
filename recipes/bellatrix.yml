@@ -2,7 +2,7 @@ name: bellatrix
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - from-file: common/cosmic-packages.yml
+  - from-file: common/cosmic.yml
   - type: files
     files:
       - source: system

@@ -1,0 +1,14 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - dennemann/MangoWC
+  - type: rpm-ostree 
+    install:
+      - scenefx
+      - mangowc
+  - type: files
+    files:
+      - source: mango
+        destination: /      

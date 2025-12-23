@@ -2,15 +2,14 @@ name: bluemango
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - from-file: common/general-packages.yml  
-  - from-file: common/mango-packages.yml
-  - from-file: common/dms-packages.yml        
+  - from-file: common/general.yml  
+  - from-file: common/mango.yml
+  - from-file: common/dms.yml        
   - type: files
     files:
       - source: system
         destination: /
-      - source: mango
-        destination: /
+  - from-file: common/flatpak.yml
   - type: systemd
     system:
       enabled:
@@ -22,5 +21,4 @@ modules:
       - mango.sh
       - neovim.sh
       - initramfs.sh
-  - from-file: common/flatpak.yml
 description: "MangoWC + DankMaterialShell in an Atomic Desktop"
