@@ -1,0 +1,9 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - ashbuk/Hyprland-Fedora
+  - type: rpm-ostree        
+    install:
+      - hyprland

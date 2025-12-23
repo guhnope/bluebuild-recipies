@@ -3,14 +3,7 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general-packages.yml  
-  - type: dnf
-    repos:
-      copr:
-        - dennemann/MangoWC
-  - type: rpm-ostree        
-    install:
-      - mangowc
-      - scenefx
+  - from-file: common/mango-packages.yml
   - from-file: common/dms-packages.yml        
   - type: files
     files:

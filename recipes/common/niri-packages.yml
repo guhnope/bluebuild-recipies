@@ -1,0 +1,11 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - yalter/niri
+  - type: rpm-ostree 
+    install:
+      - xwayland-satellite
+      - xdg-desktop-portal-gtk
+      - niri
