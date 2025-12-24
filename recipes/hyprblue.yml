@@ -3,8 +3,8 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
-  - from-file: common/hypr.yml
-  - from-file: common/dms.yml           
+  - from-file: compositor/hypr.yml
+  - from-file: quickshell/dms.yml               
   - type: files
     files:
       - source: system

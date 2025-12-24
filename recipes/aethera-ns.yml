@@ -3,25 +3,7 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
-  - from-file: common/niri.yml
-  - from-file: common/noctalia.yml              
-  - type: files
-    files:
-      - source: system
-        destination: /
-  - type: files
-    files:
-      - source: niri
-        destination: /
-  - type: systemd
-    system:
-      enabled:
-        - greetd
-  - type: script
-    scripts:
-      - niri.sh
-      - greetd-users.sh
-      - neovim.sh
-      - initramfs.sh
+  - from-file: compositor/niri.yml
+  - from-file: quickshell/noctalia.yml              
   - from-file: common/flatpak.yml
 description: "Niri + DankMaterialShell in an Atomic Desktop"

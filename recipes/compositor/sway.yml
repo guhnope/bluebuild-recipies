@@ -1,0 +1,11 @@
+---
+modules:
+  - type: rpm-ostree        
+    install:
+      - sway
+      - swayidle
+  - from-file: common/dms.yml           
+  - type: files
+    files:  
+      - source: sway
+        destination: /

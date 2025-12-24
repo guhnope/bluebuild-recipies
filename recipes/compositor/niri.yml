@@ -3,12 +3,13 @@ modules:
   - type: dnf
     repos:
       copr:
-        - dennemann/MangoWC
+        - yalter/niri
   - type: rpm-ostree 
     install:
-      - scenefx
-      - mangowc
+      - xwayland-satellite
+      - xdg-desktop-portal-gtk
+      - niri
   - type: files
     files:
-      - source: mango
+      - source: niri
         destination: /      

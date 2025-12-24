@@ -3,22 +3,7 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml  
-  - from-file: common/mango.yml
-  - from-file: common/dms.yml        
-  - type: files
-    files:
-      - source: system
-        destination: /
+  - from-file: compositor/mango.yml
+  - from-file: quickshell/dms.yml        
   - from-file: common/flatpak.yml
-  - type: systemd
-    system:
-      enabled:
-        - greetd
-        - firewalld
-  - type: script
-    scripts:
-      - greetd-users.sh
-      - mango.sh
-      - neovim.sh
-      - initramfs.sh
 description: "MangoWC + DankMaterialShell in an Atomic Desktop"
