@@ -6,4 +6,5 @@ modules:
   - from-file: compositor/niri.yml 
   - from-file: quickshell/dms.yml              
   - from-file: common/flatpak.yml
+  - from-file: common/scripts.yml
 description: "Niri + DankMaterialShell in an Atomic Desktop"

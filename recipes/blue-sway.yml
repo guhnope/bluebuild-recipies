@@ -6,4 +6,5 @@ modules:
   - from-file: compositor/sway.yml
   - from-file: quickshell/dms.yml
   - from-file: common/flatpak.yml
+  - from-file: common/scripts.yml  
 description: "Sway + DankMaterialShell in an Atomic Desktop"

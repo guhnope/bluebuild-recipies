@@ -4,20 +4,7 @@ base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
   - from-file: compositor/hypr.yml
-  - from-file: quickshell/dms.yml               
-  - type: files
-    files:
-      - source: system
-        destination: /
-  - type: systemd
-    system:
-      enabled:
-        - greetd
-        - firewalld               
-  - type: script
-    scripts:
-      - greetd-users.sh
-      - neovim.sh
-      - initramfs.sh
+  - from-file: quickshell/dms.yml                   
   - from-file: common/flatpak.yml
+  - from-file: common/scripts.yml  
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"
