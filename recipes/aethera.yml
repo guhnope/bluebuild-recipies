@@ -5,11 +5,11 @@ base-image: ghcr.io/ublue-os/base-main
 modules:
   - type: dnf
     files:
-    - brave.repo
-    - vscode.repo
+      - brave.repo
+      - vscode.repo
     keys:
-    - https://packages.microsoft.com/keys/microsoft.asc
-    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+      - https://packages.microsoft.com/keys/microsoft.asc
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     repos:
       copr:
         - yalter/niri
