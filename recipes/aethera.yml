@@ -1,0 +1,83 @@
+---
+name: aethera
+image-version: 43
+base-image: ghcr.io/ublue-os/base-main
+modules:
+  - type: dnf
+    files:
+    - brave.repo
+    - vscode.repo
+    keys:
+    - https://packages.microsoft.com/keys/microsoft.asc
+    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    repos:
+      copr:
+        - yalter/niri
+        - avengemedia/danklinux
+        - avengemedia/dms
+  - type: rpm-ostree 
+    install:
+      - niri
+      - quickshell
+      - matugen
+      - material-symbols-fonts
+      - cliphist
+      - dms
+      - dms-greeter
+      - brave-browser
+      - fish
+      - grim
+      - slurp
+      - mako
+      - adw-gtk3-theme
+      - alacritty
+      - greetd
+      - greetd-selinux
+      - qt6-qtwayland
+      - wl-clipboard
+      - mate-polkit      
+      - wlsunset
+      - imv
+      - neovim
+      - caja
+      - atril
+      - mousepad
+      - engrampa
+      - paperwork
+      - mpv
+    remove:
+      - firefox
+      - firefox-langpacks
+      - vim-minimal  
+      - vim-enhanced
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        notify: true
+        repo:
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
+          name: flathub
+          title: Flathub
+        install:
+          - com.slack.Slack
+          - md.obsidian.Obsidian
+          - com.spotify.Client      
+  - type: systemd
+    system:
+      enabled:
+        - greetd
+        - firewalld
+  - type: files
+    files:
+      - source: system
+        destination: /
+      - source: niri
+        destination: /
+      - source: dms
+        destination: /        
+  - type: script
+    scripts:
+      - greetd-users.sh
+      - neovim.sh
+      - initramfs.sh
+description: "Niri + DankMaterialShell in an Atomic Desktop"
