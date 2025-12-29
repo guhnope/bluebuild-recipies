@@ -1,19 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-# Get the *running* kernel version (most reliable in layered images)
+# Use the running kernel in the build environment (most reliable)
 KERNEL_VERSION="$(uname -r)"
 
-echo "Regenerating initramfs for running kernel: $KERNEL_VERSION"
-
-# Regenerate with hostonly (better module inclusion for boot) + ostree module
-/usr/bin/dracut \
-  --kver "$KERNEL_VERSION" \
-  --reproducible \
-  -v \
-  --add "ostree" \
-  -f \
-  "/boot/initramfs-${KERNEL_VERSION}.img"
-
-# Optional: If you want local initramfs enabled (for future boots)
-rpm-ostree initramfs --enable
+if [ -d "/lib/modules/$KERNEL_VERSION" ]; then
+    echo "Regenerating initramfs for $KERNEL_VERSION"
+    dracut --reproducible -v --add "ostree" -f "/boot/initramfs-${KERNEL_VERSION}.img" "$KERNEL_VERSION"
+else
+    echo "No modules for $KERNEL_VERSION — skipping initramfs regeneration"
+fi
