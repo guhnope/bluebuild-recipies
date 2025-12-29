@@ -1,9 +1,9 @@
-name: aethera-ns
+name: hyprblue
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
-  - from-file: compositor/niri.yml
+  - from-file: compositor/hypr.yml
   - from-file: quickshell/noctalia.yml
   - type: files
     files:
@@ -11,5 +11,5 @@ modules:
         destination: /etc/greetd/config.toml  
   - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
-  - type: initramfs
-description: "Niri + Noctalia in an Atomic Desktop"
+  - type: initramfs  
+description: "Hyprland + Noctalia in an Atomic Desktop"

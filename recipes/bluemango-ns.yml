@@ -1,15 +1,15 @@
-name: aethera-ns
+name: bluemango
 image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
-  - from-file: common/general.yml
-  - from-file: compositor/niri.yml
+  - from-file: common/general.yml  
+  - from-file: compositor/mango.yml
   - from-file: quickshell/noctalia.yml
   - type: files
     files:
       - source: greetd/tuigreet.toml
-        destination: /etc/greetd/config.toml  
+        destination: /etc/greetd/config.toml
   - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
   - type: initramfs
-description: "Niri + Noctalia in an Atomic Desktop"
+description: "MangoWC + Noctalia in an Atomic Desktop"
