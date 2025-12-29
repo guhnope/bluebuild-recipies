@@ -6,5 +6,6 @@ modules:
   - from-file: compositor/niri.yml
   - from-file: quickshell/noctalia.yml              
   - from-file: common/flatpak.yml
-  - from-file: common/scripts.yml  
+  - from-file: common/scripts.yml
+  - type: initramfs
 description: "Niri + DankMaterialShell in an Atomic Desktop"

@@ -6,5 +6,6 @@ modules:
   - from-file: compositor/mango.yml
   - from-file: quickshell/dms.yml        
   - from-file: common/flatpak.yml
-  - from-file: common/scripts.yml  
+  - from-file: common/scripts.yml
+  - type: initramfs  
 description: "MangoWC + DankMaterialShell in an Atomic Desktop"

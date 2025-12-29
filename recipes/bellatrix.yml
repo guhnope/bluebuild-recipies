@@ -15,6 +15,6 @@ modules:
   - type: script
     scripts:
       - neovim.sh
-      - initramfs.sh
   - from-file: common/flatpak.yml
+  - type: initramfs  
 description: "A Cosmic uBlue build"

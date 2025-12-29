@@ -6,5 +6,6 @@ modules:
   - from-file: compositor/hypr.yml
   - from-file: quickshell/dms.yml                   
   - from-file: common/flatpak.yml
-  - from-file: common/scripts.yml  
+  - from-file: common/scripts.yml
+  - type: initramfs  
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"
