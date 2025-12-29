@@ -79,5 +79,5 @@ modules:
     scripts:
       - greetd-users.sh
       - neovim.sh
-      - initramfs.sh
+  - type: initramfs
 description: "Niri + DankMaterialShell in an Atomic Desktop"
