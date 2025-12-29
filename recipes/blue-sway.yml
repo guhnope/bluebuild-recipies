@@ -5,7 +5,11 @@ modules:
   - from-file: common/general.yml
   - from-file: compositor/sway.yml
   - from-file: quickshell/dms.yml
+  - type: files
+    files:
+      - source: greetd/sway-dms.toml
+        destination: /etc/greetd/config.toml
   - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
-  - type: initramfs  
+  - type: initramfs
 description: "Sway + DankMaterialShell in an Atomic Desktop"

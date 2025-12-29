@@ -3,8 +3,12 @@ image-version: 43
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
-  - from-file: compositor/niri.yml 
-  - from-file: quickshell/dms.yml              
+  - from-file: compositor/niri.yml
+  - from-file: quickshell/dms.yml
+  - type: files
+    files:
+      - source: greetd/niri-dms.toml
+        destination: /etc/greetd/config.toml
   - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
   - type: initramfs
