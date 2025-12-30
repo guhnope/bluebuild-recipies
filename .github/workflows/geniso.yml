@@ -28,13 +28,13 @@ jobs:
           graphical
 
           network --bootproto=dhcp --device=link
-          ostreecontainer --url=ghcr.io/guhnope/aethera:latest --transport=registry --no-signature-verification
+          ostreecontainer --url=ghcr.io/guhnope/bluemango:latest --transport=registry --no-signature-verification
           EOF
 
       - name: Build ISO
         run: |
           # We still inject the UTF-8 fix to prevent the crash
-          mkksiso --ks kickstart.ks --cmdline "inst.lang=en_US.UTF-8 inst.env=LC_ALL=en_US.UTF-8" base.iso aethera-interactive.iso
+          mkksiso --ks kickstart.ks --cmdline "inst.lang=en_US.UTF-8 inst.env=LC_ALL=en_US.UTF-8" base.iso bluemango.iso
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4
