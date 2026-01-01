@@ -1,5 +1,5 @@
 ---
-type: rpm-ostree        
+type: rpm-ostree
 install:
     - cosmic-greeter
     - cosmic-session

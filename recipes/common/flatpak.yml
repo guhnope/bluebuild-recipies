@@ -8,8 +8,6 @@ configurations:
       name: flathub
       title: Flathub
     install:
-      - com.brave.Browser
       - com.slack.Slack
-      - com.visualstudio.code
       - md.obsidian.Obsidian
       - com.spotify.Client

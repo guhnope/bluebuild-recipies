@@ -12,4 +12,4 @@ modules:
   - type: files
     files:
       - source: niri
-        destination: /      
+        destination: /

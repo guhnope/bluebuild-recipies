@@ -1,6 +1,6 @@
 ---
 modules:
-  - type: rpm-ostree        
+  - type: rpm-ostree
     install:
       - sway
       - swayidle

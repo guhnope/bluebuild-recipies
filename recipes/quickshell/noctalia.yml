@@ -4,7 +4,7 @@ modules:
     repos:
       copr:
         - zhangyi6324/noctalia-shell
-  - type: rpm-ostree        
+  - type: rpm-ostree
     install:
         - quickshell
         - matugen
