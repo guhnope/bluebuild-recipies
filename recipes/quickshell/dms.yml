@@ -3,9 +3,9 @@ modules:
   - type: dnf
     repos:
       copr:
-        - avengemedia/dms
+        - avengemedia/dms-git
         - avengemedia/danklinux
-  - type: rpm-ostree        
+  - type: rpm-ostree
     install:
         - quickshell
         - matugen
@@ -16,4 +16,4 @@ modules:
   - type: files
     files:
       - source: dms
-        destination: /        
+        destination: /
