@@ -29,25 +29,13 @@ jobs:
           variant: ublue-os
           iso_name: bluemango-43.iso
 
-      - name: Create Release and Upload ISO
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # These use the outputs from the 'build' step above
-          ISO_PATH: ${{ steps.build.outputs.iso_path }}
-          ISO_NAME: ${{ steps.build.outputs.iso_name }}
-        run: |
-          TAG_NAME=${{ github.ref_name }}
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            TAG_NAME="latest"
-          fi
-
-          # Delete old release if it exists (for the 'latest' tag)
-          gh release delete $TAG_NAME --yes || true
-          
-          # Create release and upload the actual files found in the output path
-          gh release create $TAG_NAME \
-            "$ISO_PATH/$ISO_NAME" \
-            "$ISO_PATH/$ISO_NAME-CHECKSUM" \
-            --title "Bluemango Installer ($TAG_NAME)" \
-            --notes "Automated build of Bluemango OS." \
-            --latest
+      - name: Upload ISO as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.iso_name }}
+          path: |
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
+          if-no-files-found: error
+          retention-days: 5 # Set to a few days so it doesn't vanish immediately
+          compression-level: 2
