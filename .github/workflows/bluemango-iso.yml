@@ -1,4 +1,4 @@
-name: Build Installer ISO
+name: Build BlueMango ISO
 
 on:
   workflow_dispatch:

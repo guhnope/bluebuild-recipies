@@ -1,4 +1,4 @@
-name: Build Installer ISO
+name: Build Aethera ISO
 
 on:
   workflow_dispatch:
@@ -22,12 +22,12 @@ jobs:
         id: build
         with:
           arch: x86_64
-          image_name: bluesway
+          image_name: aethera
           image_repo: ghcr.io/guhnope
           image_tag: latest
           version: 43
           variant: ublue-os
-          iso_name: bluesway-43.iso
+          iso_name: aethera-43.iso
 
       - name: Upload ISO as artifact
         uses: actions/upload-artifact@v4
