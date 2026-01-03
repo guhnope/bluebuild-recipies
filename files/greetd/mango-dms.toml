@@ -3,4 +3,4 @@ vt = 1
 
 [default_session]
 user = "greeter"
-command = "/usr/bin/dms-greeter --command niri"
+command = "/usr/bin/dms-greeter --command mangowc"
