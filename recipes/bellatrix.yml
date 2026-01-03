@@ -6,7 +6,9 @@ modules:
   - type: files
     files:
       - source: system
-        destination: / 
+        destination: /
+      - source: greetd/cosmic-greeter.toml
+        destination: /etc/greetd/config.toml        
   - type: systemd
     system:
       enabled:
