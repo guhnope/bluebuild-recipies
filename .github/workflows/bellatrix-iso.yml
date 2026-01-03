@@ -1,0 +1,41 @@
+name: Build Installer ISO
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+# Required for the 'gh release' command to work
+permissions:
+  contents: write
+
+jobs:
+  build-interactive-iso:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build ISO
+        uses: jasonn3/build-container-installer@main
+        id: build
+        with:
+          arch: x86_64
+          image_name: bellatrix
+          image_repo: ghcr.io/guhnope
+          image_tag: latest
+          version: 43
+          variant: ublue-os
+          iso_name: bellatrix-43.iso
+
+      - name: Upload ISO as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.iso_name }}
+          path: |
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
+            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
+          if-no-files-found: error
+          retention-days: 5 # Set to a few days so it doesn't vanish immediately
+          compression-level: 2
