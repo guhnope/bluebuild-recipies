@@ -1,4 +1,4 @@
-name: Build Interactive Installer ISO
+name: Build Installer ISO
 
 on:
   workflow_dispatch:
@@ -9,9 +9,7 @@ on:
 jobs:
   build-interactive-iso:
     runs-on: ubuntu-latest
-    container: 
-      image: fedora:43
-      options: --privileged
+    # Removed the 'container:' block to avoid nested Podman issues
 
     steps:
       - name: Build ISO
@@ -20,15 +18,15 @@ jobs:
         with:
           arch: x86_64
           image_name: aethera
-          image_repo: guhnope
+          image_repo: ghcr.io/guhnope
           image_tag: latest
           version: 43
           variant: ublue-os
           iso_name: aethera-installer.iso
+          # THE FIX: This ensures the ISO actually boots on Fedora 43/44
+          additional_dracut_args: "--install /usr/lib/systemd/systemd-sysroot-fstab-check"
 
-      # This example is for uploading your ISO as a Github artifact. You can do something similar using any cloud storage, so long as you copy the output
       - name: Upload ISO as artifact
-        id: upload
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.build.outputs.iso_name }}
@@ -36,5 +34,5 @@ jobs:
             ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
             ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
           if-no-files-found: error
-          retention-days: 0
+          retention-days: 5 # Set to a few days so it doesn't vanish immediately
           compression-level: 0
