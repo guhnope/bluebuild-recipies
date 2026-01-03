@@ -5,10 +5,18 @@ on:
   push:
     tags:
       - 'v*'
+
+# Required for the 'gh release' command to work
+permissions:
+  contents: write
+
 jobs:
   build-interactive-iso:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Build ISO
         uses: jasonn3/build-container-installer@main
         id: build
@@ -24,18 +32,22 @@ jobs:
       - name: Create Release and Upload ISO
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # These use the outputs from the 'build' step above
+          ISO_PATH: ${{ steps.build.outputs.iso_path }}
+          ISO_NAME: ${{ steps.build.outputs.iso_name }}
         run: |
-          # Use the tag name if triggered by a tag, otherwise use 'latest'
           TAG_NAME=${{ github.ref_name }}
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             TAG_NAME="latest"
           fi
 
-          # Create or update the release and upload the files
+          # Delete old release if it exists (for the 'latest' tag)
           gh release delete $TAG_NAME --yes || true
+          
+          # Create release and upload the actual files found in the output path
           gh release create $TAG_NAME \
-            ./output/bluemango-43.iso \
-            ./output/bluemango-43.iso-CHECKSUM \
-            --title "BlueMango Installer ($TAG_NAME)" \
-            --notes "Automated build of BlueMango OS." \
+            "$ISO_PATH/$ISO_NAME" \
+            "$ISO_PATH/$ISO_NAME-CHECKSUM" \
+            --title "Bluemango Installer ($TAG_NAME)" \
+            --notes "Automated build of Bluemango OS." \
             --latest
