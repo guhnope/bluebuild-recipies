@@ -5,34 +5,37 @@ on:
   push:
     tags:
       - 'v*'
-
 jobs:
   build-interactive-iso:
     runs-on: ubuntu-latest
-    # Removed the 'container:' block to avoid nested Podman issues
-
     steps:
       - name: Build ISO
         uses: jasonn3/build-container-installer@main
         id: build
         with:
           arch: x86_64
-          image_name: aethera
+          image_name: bluemango
           image_repo: ghcr.io/guhnope
           image_tag: latest
           version: 43
           variant: ublue-os
-          iso_name: aethera-installer.iso
-          # THE FIX: This ensures the ISO actually boots on Fedora 43/44
-          additional_dracut_args: "--install /usr/lib/systemd/systemd-sysroot-fstab-check"
+          iso_name: bluemango-43.iso
 
-      - name: Upload ISO as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ steps.build.outputs.iso_name }}
-          path: |
-            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}
-            ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM
-          if-no-files-found: error
-          retention-days: 5 # Set to a few days so it doesn't vanish immediately
-          compression-level: 0
+      - name: Create Release and Upload ISO
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Use the tag name if triggered by a tag, otherwise use 'latest'
+          TAG_NAME=${{ github.ref_name }}
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            TAG_NAME="latest"
+          fi
+
+          # Create or update the release and upload the files
+          gh release delete $TAG_NAME --yes || true
+          gh release create $TAG_NAME \
+            ./output/bluemango-43.iso \
+            ./output/bluemango-43.iso-CHECKSUM \
+            --title "BlueMango Installer ($TAG_NAME)" \
+            --notes "Automated build of BlueMango OS." \
+            --latest
