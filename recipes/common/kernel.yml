@@ -5,7 +5,6 @@ modules:
   - type: rpm-ostree
     install:
       - kernel-cachyos 
-      - kernel-cachyos-devel-matched
     remove:
       - kernel  # Stock mainline
       - kernel-core
