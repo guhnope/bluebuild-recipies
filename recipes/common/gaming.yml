@@ -2,7 +2,6 @@
 type: rpm-ostree 
 install:
   - steam
-  - heroic-games-launcher
   - gamemode
   - mangohud
   - gamescope
@@ -11,4 +10,3 @@ install:
   - vulkan-loader
   - vulkan-validation-layers
   - vulkan-headers
-  - DirectXShaderCompiler
