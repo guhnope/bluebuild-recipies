@@ -10,4 +10,3 @@ configurations:
     install:
       - com.slack.Slack
       - md.obsidian.Obsidian
-      - com.spotify.Client
