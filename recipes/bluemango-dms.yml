@@ -9,7 +9,6 @@ modules:
     files:
       - source: greetd/mango-dms.toml
         destination: /etc/greetd/config.toml
-  - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
   - type: initramfs
 description: "MangoWC + DankMaterialShell in an Atomic Desktop"

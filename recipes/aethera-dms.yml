@@ -9,7 +9,6 @@ modules:
     files:
       - source: greetd/niri-dms.toml
         destination: /etc/greetd/config.toml
-  - from-file: common/flatpak.yml
   - from-file: common/scripts.yml
   - type: initramfs
 description: "Niri + DankMaterialShell in an Atomic Desktop"
