@@ -1,10 +1,11 @@
 modules:
   - type: dnf
     copr:
-      - rmnscnce/kernel-lqx
+      - bieszczaders/kernel-cachyos
   - type: rpm-ostree
     install:
-      - kernel-lqx
+      - kernel-cachyos 
+      - kernel-cachyos-devel-matched
     remove:
       - kernel  # Stock mainline
       - kernel-core

@@ -9,7 +9,7 @@ modules:
         destination: /
       - source: greetd/cosmic-greeter.toml
         destination: /etc/greetd/config.toml        
-  - from-file: common/liquorix.yml        
+  - from-file: common/kernel.yml        
   - type: systemd
     system:
       enabled:
