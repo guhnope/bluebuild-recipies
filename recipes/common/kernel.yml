@@ -1,3 +1,4 @@
+---
 modules:
   - type: dnf
     copr:
