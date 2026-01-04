@@ -1,0 +1,21 @@
+---
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - atim/heroic-games-launcher    
+  - type: rpm-ostree 
+    install:
+      - steam
+      - heroic-games-launcher
+      - gamemode
+      - mangohud
+      - gamescope
+      - vkBasalt
+      - vulkan-tools
+      - vulkan-loader
+      - vulkan-validation-layers
+      - vulkan-headers
+      - DirectXShaderCompiler
+      
+
