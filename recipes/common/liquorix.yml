@@ -1,0 +1,13 @@
+modules:
+  - type: dnf
+    copr:
+      - rmnscnce/kernel-lqx
+  - type: rpm-ostree
+    install:
+      - kernel-lqx
+    remove:
+      - kernel  # Stock mainline
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-extra
+      - kernel-modules-core  # If present
