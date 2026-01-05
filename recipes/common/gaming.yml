@@ -1,12 +1,26 @@
 ---
-type: rpm-ostree 
-install:
-  - steam
-  - gamemode
-  - mangohud
-  - gamescope
-  - vkBasalt
-  - vulkan-tools
-  - vulkan-loader
-  - vulkan-validation-layers
-  - vulkan-headers
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - bazzite-org/bazzite
+        - lnvso/heroic-games-launcher
+  - type: rpm-ostree
+    install:
+      - steam
+      - gamemode
+      - mangohud
+      - heroic-games-launcher
+      - gamescope
+      - gamescope-session-plus
+      - gamescope-shaders
+      - OpenGamepadUI
+      - OpenGamepadUI-session
+      - steamdeck-dsp
+      - steamos-manager
+      - ublue-update
+      - vkBasalt
+      - vulkan-tools
+      - vulkan-loader
+      - vulkan-validation-layers
+      - vulkan-headers

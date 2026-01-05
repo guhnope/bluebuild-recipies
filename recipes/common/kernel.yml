@@ -1,7 +1,7 @@
 ---
 modules:
   - type: dnf
-    repos:  
+    repos:
       copr:
         - bieszczaders/kernel-cachyos
   - type: script
