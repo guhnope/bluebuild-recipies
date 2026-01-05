@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 
 dnf -y remove \
     kernel \
