@@ -1,8 +1,9 @@
 ---
 modules:
   - type: dnf
-    copr:
-      - bieszczaders/kernel-cachyos
+    repos:  
+      copr:
+        - bieszczaders/kernel-cachyos
   - type: rpm-ostree
     install:
       - kernel-cachyos 
