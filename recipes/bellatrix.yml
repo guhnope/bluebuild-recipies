@@ -3,6 +3,7 @@ image-version: 43
 base-image: ghcr.io/blue-build/base-images/fedora-cosmic
 modules:
   - from-file: common/cosmic.yml
+  - from-file: common/gaming.yml  
   - type: files
     files:
       - source: system
@@ -18,6 +19,5 @@ modules:
     scripts:
       - neovim.sh
       - cachy-lto.sh
-  - from-file: common/gaming.yml
   - type: initramfs  
 description: "A Cosmic uBlue build for gaming"
