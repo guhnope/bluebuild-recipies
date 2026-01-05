@@ -9,7 +9,6 @@ modules:
         destination: /
       - source: greetd/cosmic-greeter.toml
         destination: /etc/greetd/config.toml        
-  - from-file: common/kernel.yml        
   - type: systemd
     system:
       enabled:
@@ -19,5 +18,6 @@ modules:
     scripts:
       - neovim.sh
   - from-file: common/gaming.yml
+  - from-file: common/kernel.yml  
   - type: initramfs  
-description: "A Cosmic uBlue build"
+description: "A Cosmic uBlue build for gaming"
