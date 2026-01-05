@@ -1,12 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Installing CachyOS kernel and removing stock"
+# Find the latest CachyOS kernel entry
+CACHY_ENTRY=$(grubby --info=ALL | grep -B1 "kernel.*cachyos" | grep ^index | head -1 | cut -d= -f2)
 
-rpm-ostree override remove \
-  kernel \
-  kernel-core \
-  kernel-modules \
-  kernel-modules-core \
-  kernel-modules-extra \
-  --install kernel-cachyos
+if [ -n "$CACHY_ENTRY" ]; then
+  grubby --set-default-index="$CACHY_ENTRY"
+  echo "Set CachyOS kernel as default"
+fi

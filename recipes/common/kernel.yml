@@ -4,6 +4,9 @@ modules:
     repos:
       copr:
         - bieszczaders/kernel-cachyos
+  - type: rpm-ostree
+    install:
+      - kernel-cachyos        
   - type: script
     scripts:
       - kernel-switch.sh
