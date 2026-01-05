@@ -16,7 +16,6 @@ modules:
       - gamescope-shaders
       - steamdeck-dsp
       - steamos-manager
-      - ublue-update
       - vkBasalt
       - vulkan-tools
       - vulkan-loader
