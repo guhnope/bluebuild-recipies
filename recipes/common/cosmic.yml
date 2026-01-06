@@ -25,9 +25,6 @@ install:
     - fish
     - neovim
 remove:
-    - libva
-    - libva-utils
-    - libva-intel-media-driver 
     - firefox
     - firefox-langpacks
     - vim-minimal  

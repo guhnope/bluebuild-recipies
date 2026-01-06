@@ -2,17 +2,22 @@
 modules:
   - type: dnf
     repos:
-#      files:
-#        - https://negativo17.org/repos/fedora-steam.repo
+      files:
+        - https://negativo17.org/repos/fedora-steam.repo
       copr:
-        - bazzite-org/bazzite
         - lnvso/heroic-games-launcher
   - type: rpm-ostree
     install:
       - steam
+      - heroic-games-launcher
+  - type: dnf
+    repos:
+      copr:
+        - bazzite-org/bazzite
+  - type: rpm-ostree
+    install:
       - gamemode
       - mangohud
-      - heroic-games-launcher
       - gamescope
       - gamescope-session-plus
       - gamescope-shaders
