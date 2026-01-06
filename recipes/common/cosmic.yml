@@ -24,3 +24,7 @@ install:
     - cosmic-wallpapers
     - fish
     - neovim
+remove:
+    - libva
+    - firefox
+    - firefox-langpacks
