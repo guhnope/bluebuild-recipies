@@ -1,6 +1,6 @@
 name: bellatrix
 image-version: 43
-base-image: ghcr.io/blue-build/base-images/fedora-cosmic
+base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/cosmic.yml
   - from-file: common/gaming.yml  
