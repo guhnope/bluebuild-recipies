@@ -5,11 +5,14 @@ modules:
       copr:
         - bieszczaders/kernel-cachyos
   - type: script
-    scripts:
-      - kernel-prep.sh
   - type: rpm-ostree
-    install:
-      - kernel-cachyos        
-  - type: script
+    remove:
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-core
+      - kernel-modules-extra
+      - kernel-tools-libs
+      - kernel-headers
+      - kernel-tools
     scripts:
-      - kernel-post.sh
+      - cachy-lto.sh
