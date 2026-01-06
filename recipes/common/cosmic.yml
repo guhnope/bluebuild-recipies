@@ -27,7 +27,8 @@ install:
 remove:
     - libva
     - libva-utils
+    - libva-intel-media-driver 
     - firefox
     - firefox-langpacks
     - vim-minimal  
-    - vim-enhanced    
+    - vim-enhanced
