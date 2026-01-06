@@ -26,5 +26,8 @@ install:
     - neovim
 remove:
     - libva
+    - libva-utils
     - firefox
     - firefox-langpacks
+    - vim-minimal  
+    - vim-enhanced    
