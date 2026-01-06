@@ -4,15 +4,6 @@ modules:
     repos:
       copr:
         - bieszczaders/kernel-cachyos
-  - type: rpm-ostree
-    remove:
-      - kernel-core
-      - kernel-modules
-      - kernel-modules-core
-      - kernel-modules-extra
-      - kernel-tools-libs
-      - kernel-headers
-      - kernel-tools
   - type: script
     scripts:
       - cachy-lto.sh
