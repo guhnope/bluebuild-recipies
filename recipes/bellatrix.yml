@@ -18,7 +18,7 @@ modules:
   - type: script
     scripts:
       - neovim.sh
-      - cachy-lto.sh
-#  - from-file: common/kernel.yml
+#      - cachy-lto.sh
+  - from-file: common/kernel.yml
   - type: initramfs  
 description: "A Cosmic uBlue build for gaming"
