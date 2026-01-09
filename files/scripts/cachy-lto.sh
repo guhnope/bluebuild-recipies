@@ -1,13 +1,11 @@
 #!/bin/bash
 
 dnf -y remove \
-    kernel kernel-core kernel-headers kernel-tools 
+#    kernel kernel-core kernel-headers kernel-tools 
 #    kernel-modules kernel-modules-core \
- #   kernel-modules-extra kernel-tools-libs \
-
-    #kernel-* &&
-
-    #rm -r -f /usr/lib/modules/*
+#    kernel-modules-extra kernel-tools-libs \
+    kernel-* &&
+    rm -r -f /usr/lib/modules/*
 
 dnf -y install --setopt=install_weak_deps=False \
     kernel-cachyos-lto
