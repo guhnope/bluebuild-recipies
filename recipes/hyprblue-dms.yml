@@ -9,8 +9,8 @@ modules:
     files:
       - source: greetd/hypr-dms.toml
         destination: /etc/greetd/config.toml
-  - from-file: common/gaming.yml
+  #- from-file: common/gaming.yml
   - from-file: common/scripts.yml
-  - from-file: common/kernel.yml  
+#  - from-file: common/kernel.yml  
   - type: initramfs
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"
