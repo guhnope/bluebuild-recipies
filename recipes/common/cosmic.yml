@@ -44,4 +44,3 @@ modules:
         - rar
     remove:
         - vim-minimal
-        - nss
