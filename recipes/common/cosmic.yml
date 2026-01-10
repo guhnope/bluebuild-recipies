@@ -10,39 +10,37 @@ modules:
         - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
   - type: rpm-ostree 
     install:
-  - type: rpm-ostree 
-    install:
-    - cosmic-greeter
-    - cosmic-session
-    - cosmic-panel
-    - cosmic-settings
-    - cosmic-wallpapers
-    - cosmic-workspaces
-    - cosmic-launcher
-    - cosmic-applets
-    - cosmic-app-library
-    - cosmic-icon-theme
-    - cosmic-screenshot
-    - cosmic-player
-    - cosmic-osd
-    - cosmic-notifications
-    - cosmic-workspaces
-    - cosmic-term
-    - cosmic-files
-    - cosmic-edit
-    - cosmic-config-fedora
-    - cosmic-randr
-    - cosmic-wallpapers
-    - fish
-    - neovim
-    - brave-browser
-    - spotify-client
-    - spotify-ffmpeg
-    - ffmpeg
-    - x264
-    - x265
-    - libvpx
-    - libdvdcss
-    - rar
+        - cosmic-greeter
+        - cosmic-session
+        - cosmic-panel
+        - cosmic-settings
+        - cosmic-wallpapers
+        - cosmic-workspaces
+        - cosmic-launcher
+        - cosmic-applets
+        - cosmic-app-library
+        - cosmic-icon-theme
+        - cosmic-screenshot
+        - cosmic-player
+        - cosmic-osd
+        - cosmic-notifications
+        - cosmic-workspaces
+        - cosmic-term
+        - cosmic-files
+        - cosmic-edit
+        - cosmic-config-fedora
+        - cosmic-randr
+        - cosmic-wallpapers
+        - fish
+        - neovim
+        - brave-browser
+        - spotify-client
+        - spotify-ffmpeg
+        - ffmpeg
+        - x264
+        - x265
+        - libvpx
+        - libdvdcss
+        - rar
     remove:
         - vim-minimal
