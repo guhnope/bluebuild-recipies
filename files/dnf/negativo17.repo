@@ -1,0 +1,59 @@
+[fedora-cdrtools]
+name=negativo17 - CDRtools
+baseurl=https://negativo17.org/repos/cdrtools/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[fedora-multimedia]
+name=negativo17 - Multimedia
+baseurl=https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[fedora-rar]
+name=negativo17 - RAR
+baseurl=https://negativo17.org/repos/rar/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[fedora-spotify]
+name=negativo17 - Spotify
+baseurl=https://negativo17.org/repos/spotify/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[fedora-steam]
+name=negativo17 - Steam
+baseurl=https://negativo17.org/repos/steam/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
