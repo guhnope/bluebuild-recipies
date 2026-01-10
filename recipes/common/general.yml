@@ -50,7 +50,6 @@ modules:
     system:
       enabled:
         - greetd
-        - firewalld
   - type: files
     files:
       - source: system
