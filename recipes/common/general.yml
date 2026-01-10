@@ -60,4 +60,3 @@ modules:
     scripts:
       - greetd-users.sh
       - neovim.sh
-      - initramfs.sh

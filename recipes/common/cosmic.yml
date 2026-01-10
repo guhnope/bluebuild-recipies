@@ -25,7 +25,5 @@ install:
     - fish
     - neovim
 remove:
-    - firefox
-    - firefox-langpacks
     - vim-minimal  
     - vim-enhanced
