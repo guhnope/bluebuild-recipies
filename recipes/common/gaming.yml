@@ -2,10 +2,8 @@
 modules:
   - type: dnf
     repos:
-      files:
-        - https://negativo17.org/repos/fedora-steam.repo
-      copr:
-        - lnvso/heroic-games-launcher
+#      copr:
+#        - lnvso/heroic-games-launcher
   - type: rpm-ostree
     install:
       - steam
