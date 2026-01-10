@@ -1,6 +1,6 @@
 name: hyprblue
 image-version: 43
-base-image: ghcr.io/ublue-os/base-main
+base-image: quay.io/fedora/fedora-bootc
 modules:
   - from-file: common/general.yml
   - from-file: compositor/hypr.yml
@@ -11,5 +11,6 @@ modules:
         destination: /etc/greetd/config.toml
   - from-file: common/gaming.yml
   - from-file: common/scripts.yml
+  - from-file: common/kernel.yml  
   - type: initramfs
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"
