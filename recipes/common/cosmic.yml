@@ -25,5 +25,4 @@ install:
     - fish
     - neovim
 remove:
-    - vim-minimal  
-    - vim-enhanced
+    - vim-minimal

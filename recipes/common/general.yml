@@ -46,7 +46,6 @@ modules:
       - rar
     remove:
       - vim-minimal  
-      - vim-enhanced
   - type: systemd
     system:
       enabled:
