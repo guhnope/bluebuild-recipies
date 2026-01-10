@@ -45,8 +45,6 @@ modules:
       - libdvdcss
       - rar
     remove:
-      - firefox
-      - firefox-langpacks
       - vim-minimal  
       - vim-enhanced
   - type: systemd
