@@ -9,7 +9,6 @@ modules:
   - type: rpm-ostree
     install:
       - steam
-      - heroic-games-launcher
   - type: dnf
     repos:
       copr:
