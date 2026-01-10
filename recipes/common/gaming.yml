@@ -1,9 +1,6 @@
 ---
 modules:
   - type: dnf
-    repos:
-#      copr:
-#        - lnvso/heroic-games-launcher
   - type: rpm-ostree
     install:
       - steam
