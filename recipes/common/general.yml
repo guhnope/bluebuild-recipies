@@ -5,11 +5,11 @@ modules:
       files:
         - brave.repo
         - vscode.repo
-        - negativo17.repo
+#        - negativo17.repo
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         - https://packages.microsoft.com/keys/microsoft.asc
-        - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+#        - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
   - type: rpm-ostree 
     install:
       - fish
