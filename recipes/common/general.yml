@@ -1,15 +1,5 @@
 ---
 modules:
-  - type: dnf
-    repos:
-      files:
-        - brave.repo
-        - vscode.repo
-#        - negativo17.repo
-      keys:
-        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-        - https://packages.microsoft.com/keys/microsoft.asc
-#        - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
   - type: rpm-ostree 
     install:
       - fish
@@ -33,11 +23,6 @@ modules:
       - mousepad
       - engrampa
       - paperwork
-      - mpv
-      - code
-      - brave-browser
-      - spotify-client
-      - spotify-ffmpeg
       - ffmpeg
       - x264
       - x265
@@ -45,11 +30,15 @@ modules:
       - libdvdcss
       - rar
     remove:
-      - vim-minimal  
+      - vim-minimal
+      - vim-enhanced
+      - firefox
+      - firefox-langpacks
   - type: systemd
     system:
       enabled:
         - greetd
+        - firewalld
   - type: files
     files:
       - source: system
