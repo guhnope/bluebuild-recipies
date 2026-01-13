@@ -1,7 +1,8 @@
 ---
 modules:
-  - type: rpm-ostree 
+  - type: dnf
     install:
+      packages:
       - fish
       - grim
       - slurp
