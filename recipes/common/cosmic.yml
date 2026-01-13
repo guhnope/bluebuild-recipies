@@ -8,8 +8,8 @@ modules:
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
-  - type: rpm-ostree 
     install:
+      packages:
         - cosmic-greeter
         - cosmic-session
         - cosmic-panel

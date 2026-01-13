@@ -5,8 +5,8 @@ modules:
       copr:
         - avengemedia/dms-git
         - avengemedia/danklinux
-  - type: rpm-ostree
     install:
+      packages:
         - quickshell
         - matugen
         - material-symbols-fonts

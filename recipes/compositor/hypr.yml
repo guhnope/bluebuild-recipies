@@ -4,9 +4,9 @@ modules:
     repos:
       copr:
         - ashbuk/Hyprland-Fedora
-  - type: rpm-ostree
     install:
-      - hyprland
+      packages:
+        - hyprland        
   - type: files
     files:
       - source: hypr

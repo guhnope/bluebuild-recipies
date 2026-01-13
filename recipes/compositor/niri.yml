@@ -4,11 +4,14 @@ modules:
     repos:
       copr:
         - yalter/niri
-  - type: rpm-ostree 
     install:
-      - xwayland-satellite
-      - xdg-desktop-portal-gtk
-      - niri
+      packages:
+        - niri
+        - xwayland-satellite
+        - xdg-desktop-portal-gtk        
+      exclude:
+        - waybar
+        - fuzzel        
   - type: files
     files:
       - source: niri

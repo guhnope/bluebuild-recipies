@@ -4,10 +4,10 @@ modules:
     repos:
       copr:
         - dennemann/MangoWC
-  - type: rpm-ostree 
     install:
-      - scenefx
-      - mangowc
+      packages:
+        - scenefx
+        - mangowc
   - type: files
     files:
       - source: mango

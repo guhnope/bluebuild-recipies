@@ -1,9 +1,13 @@
 ---
 modules:
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - sway
-      - swayidle
+      packages:
+        - sway
+        - swayidle
+      exclude:
+        - waybar
+        - fuzzel                
   - type: files
     files:  
       - source: sway

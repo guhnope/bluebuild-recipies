@@ -8,16 +8,16 @@ modules:
     repos:
       copr:
         - bazzite-org/bazzite
-  - type: rpm-ostree
     install:
-      - gamemode
-      - mangohud
-      - gamescope
-      - gamescope-session-plus
-      - gamescope-shaders
-      - steamos-manager
-      - vkBasalt
-      - vulkan-tools
-      - vulkan-loader
-      - vulkan-validation-layers
-      - vulkan-headers
+      packages:
+        - gamemode
+        - mangohud
+        - gamescope
+        - gamescope-session-plus
+        - gamescope-shaders
+        - steamos-manager
+        - vkBasalt
+        - vulkan-tools
+        - vulkan-loader
+        - vulkan-validation-layers
+        - vulkan-headers
