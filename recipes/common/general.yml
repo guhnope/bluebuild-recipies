@@ -3,38 +3,39 @@ modules:
   - type: dnf
     install:
       packages:
-      - fish
-      - grim
-      - slurp
-      - mako
-      - adw-gtk3-theme
-      - alacritty
-      - greetd
-      - greetd-tuigreet
-      - greetd-selinux
-      - qt6-qtwayland
-      - wl-clipboard
-      - mate-polkit      
-      - network-manager-applet
-      - wlsunset
-      - imv
-      - neovim
-      - caja
-      - atril
-      - mousepad
-      - engrampa
-      - paperwork
-      - ffmpeg
-      - x264
-      - x265
-      - libvpx
-      - libdvdcss
-      - rar
+        - fish
+        - grim
+        - slurp
+        - mako
+        - adw-gtk3-theme
+        - alacritty
+        - greetd
+        - greetd-tuigreet
+        - greetd-selinux
+        - qt6-qtwayland
+        - wl-clipboard
+        - mate-polkit      
+        - network-manager-applet
+        - wlsunset
+        - imv
+        - neovim
+        - caja
+        - atril
+        - mousepad
+        - engrampa
+        - paperwork
+        - ffmpeg
+        - x264
+        - x265
+        - libvpx
+        - libdvdcss
+        - rar
     remove:
-      - vim-minimal
-      - vim-enhanced
-      - firefox
-      - firefox-langpacks
+      packages:
+        - vim-minimal
+        - vim-enhanced
+        - firefox
+        - firefox-langpacks
   - type: systemd
     system:
       enabled:
