@@ -1,15 +1,12 @@
 ---
 modules:
   - type: dnf
-  - type: rpm-ostree
-    install:
-      - steam
-  - type: dnf
     repos:
       copr:
         - bazzite-org/bazzite
     install:
       packages:
+        - steam
         - gamemode
         - mangohud
         - gamescope
