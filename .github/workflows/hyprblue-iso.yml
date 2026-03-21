@@ -30,7 +30,7 @@ jobs:
           iso_name: hyprblue-43.iso
 
       - name: Upload ISO as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.build.outputs.iso_name }}
           path: |
