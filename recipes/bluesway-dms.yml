@@ -10,5 +10,5 @@ modules:
       - source: greetd/sway-dms.toml
         destination: /etc/greetd/config.toml
   - from-file: common/scripts.yml
-  - type: initramfs
+#  - type: initramfs
 description: "Sway + DankMaterialShell in an Atomic Desktop"
