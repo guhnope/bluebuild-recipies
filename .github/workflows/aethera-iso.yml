@@ -25,9 +25,9 @@ jobs:
           image_name: aethera
           image_repo: ghcr.io/guhnope
           image_tag: latest
-          version: 43
+          version: 44
           variant: ublue-os
-          iso_name: aethera-43.iso
+          iso_name: aethera-44.iso
 
       - name: Upload ISO as artifact
         uses: actions/upload-artifact@v7
