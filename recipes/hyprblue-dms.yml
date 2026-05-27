@@ -12,5 +12,5 @@ modules:
   #- from-file: common/gaming.yml
   - from-file: common/scripts.yml
 #  - from-file: common/kernel.yml  
-  - type: initramfs
+#  - type: initramfs
 description: "Hyprland + DankMaterialShell in an Atomic Desktop"
