@@ -24,7 +24,7 @@ modules:
         - mousepad
         - engrampa
         - paperwork
-        - lua
+        - lua-lpeg
         - ffmpeg
         - x264
         - x265
