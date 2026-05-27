@@ -1,5 +1,5 @@
 name: hyprblue
-image-version: 43
+image-version: 44
 base-image: ghcr.io/ublue-os/base-main
 modules:
   - from-file: common/general.yml
