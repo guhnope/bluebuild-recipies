@@ -7,7 +7,6 @@ modules:
       - xdg-desktop-portal-gtk
     remove:
       - waybar
-      - fuzzel
   - type: files
     files:
       - source: niri
