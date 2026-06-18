@@ -19,7 +19,6 @@ modules:
       - network-manager-applet
       - wlsunset
       - imv
-      - neovim
       - caja
       - atril
       - mousepad
