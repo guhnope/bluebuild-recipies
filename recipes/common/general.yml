@@ -5,40 +5,37 @@ modules:
       - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     keys:
       - https://repos.fyralabs.com/terra44/key.asc
-  - type: dnf
     install:
-      packages:
-        - fish
-        - grim
-        - slurp
-        - mako
-        - matugen
-        - cliphist
-        - adw-gtk3-theme
-        - greetd
-        - greetd-selinux
-        - wl-clipboard
-        - network-manager-applet
-        - wlsunset
-        - imv
-        - neovim
-        - caja
-        - atril
-        - mousepad
-        - engrampa
-        - paperwork
-        - lua-lpeg
-        - ffmpeg
-        - x264
-        - x265
-        - noctalia-git
-        - noctalia-greeter
+      - fish
+      - grim
+      - slurp
+      - mako
+      - matugen
+      - cliphist
+      - adw-gtk3-theme
+      - greetd
+      - greetd-selinux
+      - wl-clipboard
+      - network-manager-applet
+      - wlsunset
+      - imv
+      - neovim
+      - caja
+      - atril
+      - mousepad
+      - engrampa
+      - paperwork
+      - lua-lpeg
+      - ffmpeg
+      - x264
+      - x265
+      - noctalia-git
+      - noctalia-greeter
     remove:
-      packages:
-        - vim-minimal
-        - vim-enhanced
-        - firefox
-        - firefox-langpacks
+      - vim-minimal
+      - vim-enhanced
+      - firefox
+      - firefox-langpacks
   - type: systemd
     system:
       enabled:
