@@ -5,8 +5,6 @@ modules:
       - niri
       - xwayland-satellite
       - xdg-desktop-portal-gtk
-    remove:
-      - waybar
   - type: files
     files:
       - source: niri
