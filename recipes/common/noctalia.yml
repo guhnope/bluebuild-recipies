@@ -1,7 +1,0 @@
----
-modules:
-  - type: dnf
-    install:
-      packages:
-        - noctalia-git
-        - noctalia-greeter

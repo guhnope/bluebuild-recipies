@@ -31,9 +31,8 @@ modules:
         - ffmpeg
         - x264
         - x265
-        - libvpx
-        - libdvdcss
-        - rar
+        - noctalia-git
+        - noctalia-greeter
     remove:
       packages:
         - vim-minimal
