@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 # Required for the 'gh release' command to work
 permissions:
@@ -25,9 +25,9 @@ jobs:
           image_name: hyprblue
           image_repo: ghcr.io/guhnope
           image_tag: latest
-          version: 43
+          version: 44
           variant: ublue-os
-          iso_name: hyprblue-43.iso
+          iso_name: hyprblue-44.iso
 
       - name: Upload ISO as artifact
         uses: actions/upload-artifact@v7
