@@ -1,12 +1,7 @@
 ---
 modules:
   - type: dnf
-    repos:
-      copr:
-        - zhangyi6324/noctalia-shell
     install:
       packages:
-        - quickshell
-        - matugen
-        - cliphist
-        - noctalia-shell
+        - noctalia-git
+        - noctalia-greeter

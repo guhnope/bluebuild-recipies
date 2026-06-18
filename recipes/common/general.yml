@@ -1,5 +1,10 @@
 ---
 modules:
+  - type: rpm-ostree
+    repos:
+      - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+    keys:
+      - https://repos.fyralabs.com/terra44/key.asc
   - type: dnf
     install:
       packages:
@@ -7,14 +12,12 @@ modules:
         - grim
         - slurp
         - mako
+        - matugen
+        - cliphist
         - adw-gtk3-theme
-        - alacritty
         - greetd
-        - greetd-tuigreet
         - greetd-selinux
-        - qt6-qtwayland
         - wl-clipboard
-        - mate-polkit      
         - network-manager-applet
         - wlsunset
         - imv
@@ -45,7 +48,7 @@ modules:
   - type: files
     files:
       - source: system
-        destination: /        
+        destination: /
   - type: script
     scripts:
       - greetd-users.sh

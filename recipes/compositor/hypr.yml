@@ -2,11 +2,10 @@
 modules:
   - type: dnf
     repos:
-      copr:
-        - ashbuk/Hyprland-Fedora
+
     install:
       packages:
-        - hyprland        
+        - hyprland
   - type: files
     files:
       - source: hypr

@@ -1,13 +1,9 @@
 ---
 modules:
   - type: dnf
-    repos:
-      copr:
-        - dennemann/MangoWC
     install:
       packages:
-        - scenefx
-        - mangowc
+        - mangowm
   - type: files
     files:
       - source: mango
