@@ -1,11 +1,8 @@
 ---
 modules:
-  - type: dnf
-    repos:
-
+  - type: rpm-ostree
     install:
-      packages:
-        - hyprland
+      - hyprland
   - type: files
     files:
       - source: hypr

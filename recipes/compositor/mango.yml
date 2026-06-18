@@ -1,9 +1,8 @@
 ---
 modules:
-  - type: dnf
+  - type: rpm-ostree
     install:
-      packages:
-        - mangowm
+      - mangowm
   - type: files
     files:
       - source: mango
