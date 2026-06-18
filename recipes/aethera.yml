@@ -7,4 +7,8 @@ modules:
   - from-file: common/gaming.yml
   - from-file: common/scripts.yml
   - type: initramfs
+    # Move the args inside the initramfs module block
+    args:
+      - --omit-binaries
+      - /usr/bin/nvim
 description: "Niri + Noctalia in an Atomic Desktop"
