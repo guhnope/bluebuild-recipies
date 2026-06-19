@@ -10,6 +10,7 @@ modules:
       - grim
       - slurp
       - mako
+      - helix
       - matugen
       - cliphist
       - adw-gtk3-theme
@@ -32,6 +33,7 @@ modules:
       - helium-gtk-theme
       - noctalia-git
       - noctalia-greeter
+      - ghostty
     remove:
       - vim-minimal
       - vim-enhanced
