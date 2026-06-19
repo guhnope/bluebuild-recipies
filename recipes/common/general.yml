@@ -49,4 +49,3 @@ modules:
   - type: script
     scripts:
       - greetd-users.sh
-      - neovim.sh
