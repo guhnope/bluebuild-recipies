@@ -13,6 +13,7 @@ modules:
         - gamescope-session-plus
         - gamescope-shaders
         - steamos-manager
+        - heroic-games-launcher
         - vkBasalt
         - vulkan-tools
         - vulkan-loader

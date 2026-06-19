@@ -27,6 +27,9 @@ modules:
       - ffmpeg
       - x264
       - x265
+      - zed
+      - helium-browser-bin
+      - helium-gtk-theme
       - noctalia-git
       - noctalia-greeter
     remove:
