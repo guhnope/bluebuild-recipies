@@ -1,4 +1,4 @@
-name: bluemango
+name: bluemango-ublue
 image-version: 44
 base-image: ghcr.io/ublue-os/base-main
 modules:
